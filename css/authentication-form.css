@@ -12,6 +12,7 @@ body {
 
 .content {
   padding: 30px;
+  display: flex;
 }
 
 h2 {
@@ -26,7 +27,7 @@ p {
 
 form {
   border: 1px solid #a9a9a9;
-  padding: 20px;
+  padding: 5px;
 }
 
 .subtext {
@@ -34,9 +35,26 @@ form {
   font-weight: unset;
 }
 
+.form-input-control {
+  position: relative;
+}
+
 #sign-in,
 #sign-up {
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 0 15px 0 15px;
+}
+
+#sign-in .form-header,
+#sign-up .form-header {
+  padding: 0 0 30px 0;
+}
+
+#sign-in-form,
+#sign-up-form {
+  padding: 15px;
 }
 
 a {
@@ -46,6 +64,7 @@ a {
 
 label {
   font-weight: bold;
+  margin: 0 0 6px 0;
 }
 
 input {
@@ -54,11 +73,22 @@ input {
   padding: 5px;
 }
 
+input[type="text"] ~ label,
+input[type="email"] ~ label,
+input[type="password"] ~ label {
+  font-weight: bold;
+}
+
 input[type="checkbox"],
 input[type="radio"] {
   width: max-content;
   height: max-content;
   padding: 0;
+}
+
+input[type="checkbox"] ~ label,
+input[type="radio"] ~ label {
+  font-weight: normal;
 }
 
 input[type="submit"] {
@@ -82,4 +112,60 @@ input[type="submit"]:hover {
 
 .form select {
   height: 30px;
+}
+
+form div.form-input-control,
+form div.form-group-horizontal-control {
+  padding: 0 0 30px 0;
+  display: flex;
+  flex-direction: column;
+}
+
+hr {
+  margin: 15px 0 15px 0;
+  height: .25px;
+}
+
+form .form-submit-control {
+  margin: auto;
+} 
+
+form#sign-up-form div:nth-child(6) input {
+  padding: 5px 0 5px 0;
+}
+
+form#sign-up-form div.form-group-horizontal-control {
+  display: flex;
+  flex-direction: row;
+}
+
+.form-group-horizontal-control .form-input-control {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+
+.form-group-horizontal-control .form-input-control select {
+  background-color: white;
+  padding: 3px;
+  border-style: solid;
+  border-color: black;
+  border-width: 1px;
+}
+
+.form-group-horizontal-control div:nth-child(1) {padding: 0 15px 0 0;}
+.form-group-horizontal-control div:nth-child(2) {padding: 0 0 0 15px;} 
+
+#sign-up-form div:nth-child(8) {
+  padding: 0;
+}
+
+.form-submit-control {
+  display: flex;
+  justify-content: center;
+}
+
+.form-submit-control * {
+  align-self: center;
+  margin: 0 15px 0 15px;
 }
